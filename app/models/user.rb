@@ -4,12 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :firstname, presence: true
-  validates :lastname, presence: true
-  validates :phone, presence: true, length: { minimum: 5 }   
+  # validates :firstname, presence: true
+  # validates :lastname, presence: true
+  # validates :phone, presence: true, length: { minimum: 5 }   
 
   extend Enumerize
   enumerize :role, in: [:user, :admin], default: :user
 
-  has_many :advertisments
+  has_many :advertisements
 end

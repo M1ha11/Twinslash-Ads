@@ -15,3 +15,124 @@
  */
 
 @import 'bootstrap';
+
+.footer {
+  position: fixed;
+  bottom: 0;  
+  width: 100%;
+}
+
+.copyright {
+  color: #FFD700;
+}
+
+.title {
+  color: #FFD700;
+  size: 50px;
+}
+
+.nav-btn {
+  color: #FFD700;
+
+}
+
+.login-container {
+  margin: auto;
+  margin-top: 20px;
+  display: grid;
+  justify-content: center;
+}
+
+.h3 {
+  color: #FFD700;
+  font-size: 50px;
+  margin-bottom: 70px;
+}
+
+.log-label {
+  color: #FFD700;
+  font-size: 26px;
+}
+
+.optional {
+  width: 500px;
+}
+
+.btn-dark {
+ color: #FFD700;
+}
+
+.log-btn {
+  width: 70%;
+  margin-left: 70px;
+}
+
+.form-inputs {
+  max-width: 600px;
+} 
+
+.new-btn {
+  float: right;
+  margin: 10px 30px 30px 30px;
+  width: 15%;
+  text-align: center;
+}
+
+
+.card {
+  background-image: url(public/images/bg.jpg);
+}
+
+.index {
+  margin: 5px 10px 5px 10px;
+}
+
+.index-card-title {
+  text-align: center;
+  font-size: 30px;
+  color: black;
+}
+
+.index-card-text {
+  font-size: 20px;
+}
+
+.title-container {
+  color: #FFD700;
+  size: 40px;
+  margin: 5px 10px 10px 10px;
+}
+
+.card-contact {
+  margin-top: 30px;
+}
+
+.show-card {
+  width: 60%;
+  display: grid;
+  margin: 100px 300px 100px 300px;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 50px;
+}
+
+.card-text {
+  margin-bottom: 60px;
+  font-size: 30px;
+}
+
+.list-hor {
+    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.delete-btn {
+  float: right;
+  margin: 0px 5px 4px 0px;
+  width: 100px;
+  text-align: center;
+}

@@ -1,0 +1,59 @@
+<div class="advertisements-container">
+  <div class="row">
+    <% if current_user %>
+      <% if can? :create, Advertisement %>
+        <%= link_to 'Create Advertisement', new_advertisement_path, class: "btn-dark new-btn btn-lg" %>
+      <% end %>
+
+      <% if can? :manage, User %>
+        <%= link_to 'Users', new_advertisement_path, class: "btn-dark new-btn btn-lg" %>    
+      <% end %>
+    <% end %>
+  </div>
+  <% if current_user && current_user.role == 'user' %>
+    <h1 class="title-container">My Advertisements:</h1>
+    <% @current_user.advertisements.each do |advertisement| %>
+      <div class="row index">
+        <div class="col-6 col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text card-title index-card-title">
+                <%= link_to "#{advertisement.name}", advertisement_path(advertisement) %>
+              </p>
+              <p class="card-text index-card-text">
+                <%= advertisement.text.truncate(30) %>
+              </p>
+               <p>
+              <%= link_to 'Delete', advertisement, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-dark delete-btn btn-lg" %>
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <hr class="indx-line">
+  <% end %>
+  
+  <h1 class="title-container">All Advertisements:</h1>
+  <% @advertisements.each do |advertisement| %>
+    <div class="row index">
+      <div class="col-6 col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text card-title index-card-title">
+              <%= link_to "#{advertisement.name}", advertisement_path(advertisement) %>
+            </p>
+            <p class="card-text index-card-text">
+              <%= advertisement.text.truncate(30) %>
+            </p>
+            <% if can? :destroy, Advertisement %>
+              <p>
+                <%= link_to 'Delete', advertisement, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-dark delete-btn btn-lg" %>
+              </p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

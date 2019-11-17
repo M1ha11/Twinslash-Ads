@@ -1,0 +1,36 @@
+<div class="card show-card">
+  <div class="card-body">
+    <% if current_user == @advertisement.user %>
+      <ul class="list-group list-group-horizontal-sm">
+        <li class="list-group-item">
+          <%= link_to 'Edit', edit_advertisement_path(@advertisement) %>
+        </li>
+        <li class="list-group-item">
+          <%= link_to 'Delete', @advertisement, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </li>
+      </ul>
+    <% elsif current_user.role == 'admin' %>
+      <%= link_to 'Delete', @advertisement, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    <h1 class="card-title">
+      <%= @advertisement.name %>
+    </h1>
+    <div class="card-images">
+      
+    </div>
+    <div class="card-text">
+      <%= @advertisement.text %>
+    </div>
+    <div class="card-contact">
+      <p>Contacts:</p>
+      <ul class="list-group list-group-horizontal-sm">
+        <li class="list-group-item">
+          <%= @advertisement.user.firstname %><span> </span><%= @advertisement.user.lastname %>
+        </li>
+        <li class="list-group-item">
+          <%= @advertisement.user.phone %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -38,9 +38,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'better_errors', '~> 2.5', '>= 2.5.1'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'bootstrap', '~> 4.3', '>= 4.3.1'
   gem 'cancancan', '~> 3.0'
+  gem 'carrierwave', '~> 2.0'
   gem 'devise', '~> 4.7'
   gem 'enumerize', '~> 2.3'
   gem 'nested_form', '~> 0.3.2'
@@ -48,7 +50,7 @@ group :development, :test do
   gem 'ransack', '~> 2.3'
   gem 'rspec-rails', '~> 3.9'
   gem 'simple_form', '~> 5.0'
-  gem 'state_machine', '~> 1.2'
+  gem 'state_machines-activerecord', '~> 0.6.0'
   gem 'whenever', '~> 1.0'
   gem 'will_paginate', '~> 3.2'
 end

@@ -11,11 +11,44 @@
 
   <body>
     <nav class="navbar navbar-dark bg-dark">
+      <%= link_to root_path, class: "navbar-item" do %>
+        <h1 class="title">ADS</h1>
+      <% end %>
       <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
       </form>
+      <ul class="nav justify-content-end">
+        <% unless current_user %>
+          <li class="nav-item">
+            <button type="buttom" class="btn btn-outline-warning">
+              <%= link_to 'Log In', new_user_session_path, class: "nav-btn" %>
+            </button>
+          </li>
+          <li class="nav-item">
+            <button type="buttom" class="btn btn-outline-warning">
+              <%= link_to 'Sign Up', new_user_registration_path, class: "nav-btn" %>
+            </button>
+          </li>
+
+        <% else %>
+          <li class="nav-item">
+            <button type="buttom" class="btn btn-outline-warning">
+              <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "nav-btn" %>
+            </button>
+          </li>
+
+        <% end %>
+      </ul>
     </nav>
+
     <%= yield %>
+    <br>
+
+    <footer class="footer mt-auto py-3 bg-dark">
+    <div class="container text-center">
+      <span class="copyright">© Copyright 2019</span>
+    </div>
+  </footer>
   </body>
 </html>

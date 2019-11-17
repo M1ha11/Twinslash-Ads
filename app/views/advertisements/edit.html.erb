@@ -1,6 +1,6 @@
 <div class="login-container">
   <div class="text-center mb-4">
-    <h1 class="h3 mb3 font-weight-normal">New Advertisement</h1>
+    <h1 class="h3 mb3 font-weight-normal">Edit Advertisement</h1>
   </div>
   <div class="row justify-content-md-center">
     <div class="col-md-12">
@@ -8,7 +8,7 @@
         <% flash[:errors].each do |e| %>
           <p><%= e %></p> <br>
         <% end %>
-      <% end %> 
+      <% end %>   
       <%= simple_form_for(@advertisement) do |f| %>
         <%= f.error_notification %>
 
@@ -34,7 +34,16 @@
                       label:false
                       %>
           </div>
-          
+          <div class="form-group">
+            <%= f.label :type, "Type", class: "log-label"%>
+            <%= f.select :type,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "image" },
+                      placeholder: "Image",
+                      label:false
+                      %>  
+          </div>
           <div class="form-group">
             <%= f.label :image, "Image", class: "log-label"%>
             <%= f.file_field :image,
@@ -49,7 +58,7 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Create", class: "btn-dark log-btn btn-lg" %>
+          <%= f.button :submit, "Update", class: "btn-dark log-btn btn-lg" %>
         </div>
       <% end %>
 

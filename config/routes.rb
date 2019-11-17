@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   devise_for :users
-  resources :advertisement do
+  resources :advertisements do
   end
 
   root "advertisements#index"
