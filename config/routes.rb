@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
   
   devise_for :users
+  resources :users
   resources :advertisements do
+    collection do
+      get :admin_index
+    end
+    member do
+      patch :set_type
+    end
   end
 
   root "advertisements#index"

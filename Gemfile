@@ -44,6 +44,8 @@ group :development, :test do
   gem 'cancancan', '~> 3.0'
   gem 'carrierwave', '~> 2.0'
   gem 'devise', '~> 4.7'
+  gem 'elasticsearch-rails', '~> 6.0'
+  gem 'elasticsearch-model', '~> 6.0'
   gem 'enumerize', '~> 2.3'
   gem 'nested_form', '~> 0.3.2'
   gem 'pry', '~> 0.12.2'
@@ -51,7 +53,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.9'
   gem 'simple_form', '~> 5.0'
   gem 'state_machines-activerecord', '~> 0.6.0'
-  gem 'whenever', '~> 1.0'
+  gem 'whenever', '~> 1.0', require: false
   gem 'will_paginate', '~> 3.2'
 end
 

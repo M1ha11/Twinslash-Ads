@@ -8,8 +8,9 @@
         <% flash[:errors].each do |e| %>
           <p><%= e %></p> <br>
         <% end %>
-      <% end %>   
-      <%= simple_form_for(@advertisement) do |f| %>
+      <% end %>
+      <%= binding.pry %>
+      <%= simple_form_for @advertisement do |f| %>
         <%= f.error_notification %>
 
         <div class="form-inputs">
@@ -35,24 +36,13 @@
                       %>
           </div>
           <div class="form-group">
-            <%= f.label :type, "Type", class: "log-label"%>
-            <%= f.select :type,
+            <%= f.label :images, "Images", class: "log-label"%>
+            <%= f.file_field :images,
+                      multiple: true,
                       required: false,
                       autofocus: true,
-                      input_html: { autocomplete: "image" },
-                      placeholder: "Image",
                       label:false
-                      %>  
-          </div>
-          <div class="form-group">
-            <%= f.label :image, "Image", class: "log-label"%>
-            <%= f.file_field :image,
-                      required: false,
-                      autofocus: true,
-                      input_html: { autocomplete: "image" },
-                      placeholder: "Image",
-                      label:false
-                      %>  
+                      %>
           </div>
           
         </div>

@@ -16,6 +16,10 @@
 
 @import 'bootstrap';
 
+body {
+  background-image: url('wood3.jpg');
+}
+
 .footer {
   position: fixed;
   bottom: 0;  
@@ -80,7 +84,7 @@
 
 
 .card {
-  background-image: url(public/images/bg.jpg);
+  background-image: url('bg4.jpg');
 }
 
 .index {
@@ -90,7 +94,8 @@
 .index-card-title {
   text-align: center;
   font-size: 30px;
-  color: black;
+  color: #4B0082;
+  font-weight: bold;
 }
 
 .index-card-text {
@@ -115,11 +120,20 @@
 
 .card-title {
   text-align: center;
-  font-size: 50px;
+  font-size: 55px;
+  color: #4B0082;
+  font-style: italic;
+}
+
+.contact {
+  color: #4B0082;;
+  font-style: italic;
+  font-size: 26px;
+  font-weight: bold;
 }
 
 .card-text {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   font-size: 30px;
 }
 
@@ -133,6 +147,73 @@
 .delete-btn {
   float: right;
   margin: 0px 5px 4px 0px;
-  width: 100px;
+  width: 160px;
   text-align: center;
+}
+
+.us-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.us-item {
+  display: block;
+  text-align: center;
+  padding: 3px;
+}
+
+.us-cur {
+  font-style: italic;
+}
+
+.list-mg {
+  margin-bottom: 30px;
+}
+
+.col-ind {
+  margin-bottom: 20px;
+}
+
+.users-list {
+  width: 255px;
+}
+
+
+.show-image {
+  width:250px;
+  height: 340px;
+}
+
+.carousel-control-next {
+  left: 190px;
+}
+
+.lst {
+  background-color: black;
+}
+
+.contact-text {
+  color: #FFD700;
+  background-color: #343a40;
+}
+
+.btn-list {
+  background-color: transparent;
+  border: 0;
+}
+
+.users {
+  background-image: url('wood3.jpg');
+}
+
+.type-text {
+  font-size: 22px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.card-body {
+  max-width: 1000px;
 }

@@ -1,0 +1,29 @@
+<div class="card show-card">
+  <div class="card-body">
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |e| %>
+        <p><%= e %></p> <br>
+      <% end %>
+    <% end %>   
+    <%= simple_form_for @advertisement, method: :patch, url: set_type_advertisement_path(@advertisement) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <div class="form-group">
+          <%= f.label :typ, "Type", class: "log-label"%>
+          <%= f.input :typ,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "type" },
+                    placeholder: "Type",
+                    label:false,
+                    class: "input-group mb-3"
+                    %>
+        </div>
+        <div class="form-actions">
+          <%= f.submit "Add Type", class: "btn-dark delete-btn btn-lg" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

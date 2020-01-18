@@ -7,15 +7,19 @@ class Ability
     user ||= User.new
 
     if user.role == 'admin'
-      can [:read, :destroy], Advertisement
+      can [:read, :destroy, :admin_index, :set_type], Advertisement
       can :manage, User
+      can :update, Advertisement, [:state, :typ, :state_event]
+      can :set_type, Advertisement, [:typ]
       # can :create, Advertisement.type
-      cannot [:create, :update], Advertisement
+      cannot [:create], Advertisement
     elsif user.role == 'user'
       can :read, Advertisement, state: :published
       can :create, Advertisement
-      can :manage, Advertisement, user_id: user.id
-    else
+      can [:read, :destroy], Advertisement, user_id: user.id
+      can :manage, Advertisement, user_id: user.id, state: 'draft'
+      cannot :update, Advertisement, [:typ]
+    elsif !user.present?
       can :read, Advertisement, state: :published
       cannot [:create, :update, :destroy], Advertisement
     end

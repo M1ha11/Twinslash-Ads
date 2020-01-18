@@ -1,0 +1,71 @@
+<div class="login-container">
+  <div class="text-center mb-4">
+    <h1 class="h3 mb3 font-weight-normal">Edit</h1>
+  </div>
+  <div class="row justify-content-md-center">
+    <div class="col-md-12">    
+      <%= simple_form_for(@user, url: user_path(@user)) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="form-inputs">
+          <div class="form-group">
+            <%= f.label :firstname, "Firstname", class: "log-label"%>
+            <%= f.input :firstname,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "firstname" },
+                      placeholder: "Firstname",
+                      label:false,
+                      class: "input-group mb-3"
+                      %>
+          </div>
+          <div class="form-group">
+            <%= f.label :lastname, "Lastname", class: "log-label"%>
+            <%= f.input :lastname,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "lastname" },
+                      placeholder: "Lastname",
+                      label:false
+                      %>
+          </div>
+          <div class="form-group">
+            <%= f.label :phone, "Phone", class: "log-label"%>
+            <%= f.input :phone,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "phone" },
+                      placeholder: "Phone",
+                      label:false
+                      %>  
+          </div>
+          <div class="form-group">
+            <%= f.label :email, "Email", class: "log-label"%>
+            <%= f.input :email,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" },
+                      placeholder: "Email",
+                      label:false
+                      %>
+          </div>
+          <div class="form-group">
+            <%= f.label :role, "Role", class: "log-label"%>
+            <%= f.select :role, User.role.values,
+                      required: false,
+                      autofocus: true,
+                      label:false
+                      %>
+          </div>
+          
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "Update", class: "btn-dark log-btn btn-lg" %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+
+</div>

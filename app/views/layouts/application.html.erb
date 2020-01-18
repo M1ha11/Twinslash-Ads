@@ -14,10 +14,15 @@
       <%= link_to root_path, class: "navbar-item" do %>
         <h1 class="title">ADS</h1>
       <% end %>
-      <form class="form-inline">
+      <%= form_tag(advertisements_path, method: :get, class: "form-inline") do%>
+        <%= text_field_tag :search, params[:name], placeholder: 'Search', class: 'form-control mr-sm-2' %>
+        <%= submit_tag 'Search', class: "btn btn-outline-warning my-2 my-sm-0" %>
+      <% end %>
+
+      <!-- <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      </form> -->
       <ul class="nav justify-content-end">
         <% unless current_user %>
           <li class="nav-item">
@@ -32,6 +37,11 @@
           </li>
 
         <% else %>
+          <li class="nav-item">
+            <button type="buttom" class="btn btn-outline-warning">
+              <%= link_to 'Edit Profile', edit_user_registration_path, class: "nav-btn" %>
+            </button>
+          </li>
           <li class="nav-item">
             <button type="buttom" class="btn btn-outline-warning">
               <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "nav-btn" %>

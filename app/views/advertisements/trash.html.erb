@@ -1,0 +1,30 @@
+<div class="form-group">
+            <%= f.label :images, "Image", class: "log-label"%>
+            <%= f.file_field :images,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "image" },
+                      placeholder: "Image",
+                      label:false
+                      %>  
+          </div>
+
+
+
+<% @advertisement.images.each_with_index do |image, index| %>
+              <div class="carousel-item <%= index == 0 ? 'active' : '' %>">
+                <%= image_tag image, class: "d-block show-image" %>
+              </div>
+              <% end %>
+
+              
+<div class="carousel-inner">
+                <div class="item active">
+                  <%= image_tag @advertisement.images.first, class: "d-block show-image" %>
+                </div>
+                <% @advertisement.images.drop(1).each do |image| %>
+                  <div class="item">
+                    <%= image_tag image, class: "d-block show-image" %>
+                  </div>
+                <% end %>
+              </div>
