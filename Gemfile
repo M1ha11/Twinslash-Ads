@@ -42,7 +42,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'bootstrap', '~> 4.3', '>= 4.3.1'
   gem 'cancancan', '~> 3.0'
-  gem 'carrierwave', '~> 2.0'
+  gem 'carrierwave', '~> 2.1'
   gem 'devise', '~> 4.7'
   gem 'elasticsearch-rails', '~> 6.0'
   gem 'elasticsearch-model', '~> 6.0'
